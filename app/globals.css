@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #050505;
+  color: #f2f2f2;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Thin scrollbars that fit the black/pink studio theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0c0c;
+}
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border: 2px solid #0c0c0c;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff2f92;
+}
+
+/* Native color swatch inputs, restyled to sit flush in dark panels */
+input[type="color"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid #333333;
+  border-radius: 3px;
+  padding: 0;
+  width: 28px;
+  height: 22px;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 2px;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 2px;
+}
+
+/* Custom checkbox to match the reference app's square pink checkboxes */
+.studio-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  border: 1px solid #4a4a4a;
+  background: #0c0c0c;
+  cursor: pointer;
+  position: relative;
+  border-radius: 2px;
+}
+.studio-checkbox:checked {
+  background: #ff2f92;
+  border-color: #ff2f92;
+}
+.studio-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid #050505;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Slim range sliders in the same accent */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: #333333;
+  border-radius: 999px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #ff2f92;
+  cursor: pointer;
+  margin-top: -5px;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 2px;
+  background: #333333;
+}
